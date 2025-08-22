@@ -1,0 +1,1820 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #111;
+  color: white;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.right-menu {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.btn {
+  background-color: #fff;
+  color: #333;
+  padding: 8px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.flag {
+  width: 30px;
+}
+
+.profile-icon {
+  background-color: #fff;
+  color: #333;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  font-weight: bold;
+}
+
+.hero {
+  position: relative;
+  height: 400px;
+  width: 100%;
+  overflow: hidden;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.hero-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: bottom;
+  z-index: 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.logo-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 100px;
+  flex-wrap: wrap;
+  animation: fadeUp 1.2s ease-out;
+}
+
+.logo-icon {
+  height: 140px;
+  max-width: 140px;
+}
+
+.logo-text {
+  text-align: left;
+}
+
+.logo-text h1 {
+  font-size: 90px;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+  line-height: 1;
+}
+
+.logo-text p {
+  font-size: 22px;
+  color: white;
+  margin-top: 15px;
+  letter-spacing: 2px;
+}
+
+.line {
+  width: 60px;
+  height: 4px;
+  background-color: white;
+  margin: 15px 0;
+  border-radius: 2px;
+}
+
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.random-container {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  text-align: center;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  z-index: 10;
+  transform: scale(1.2);
+  transform-origin: bottom right;
+}
+
+.random-container p {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+.random-container span {
+  font-weight: bold;
+  color: #ff4081;
+}
+
+#randomBtn {
+  background-image: url('images/fondoboton.jpg');
+  background-size: cover;
+  background-position: center;
+  border: none;
+  padding: 12px 26px;
+  font-size: 1.1em;
+  color: rgb(255, 255, 0);
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease;
+  animation: pulse 2s infinite;
+}
+
+#randomBtn:hover {
+  transform: scale(1.08);
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.card-section {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 60px 20px;
+  background-color: #222;
+}
+
+.card {
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  overflow: visible;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.card-text {
+  padding: 15px;
+  font-weight: bold;
+}
+
+.destinos-dropdown,
+.destinos-naturales-dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #2c2c2c;
+  border-radius: 6px;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  display: none;
+  z-index: 9999;
+  width: 100%;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.dropdown-menu.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dropdown-menu li {
+  padding: 8px 16px;
+}
+
+.dropdown-menu li a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #444;
+}
+
+.fondo-destinos {
+  background-image: url('images/fondodestinos.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  padding: 60px 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.fondo-destinos::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+}
+
+.destinos-frecuentes h2 {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 1;
+}
+
+.destinos-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.destino-card {
+  background-color: rgba(30, 30, 30, 0.9);
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 300px;
+  text-align: left;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  transition: all 0.3s ease;
+}
+
+.destino-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.destino-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.destino-card h3 {
+  margin: 10px 0;
+  font-size: 1.4em;
+  color: #00bcd4;
+}
+
+.destino-card p {
+  font-size: 0.95em;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.destino-card button {
+  background-color: #444;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.destino-card button:hover {
+  background-color: #00bcd4;
+  transform: scale(1.05);
+  transition: all 0.2s ease;
+}
+
+footer {
+  background-color: #1c1c1c;
+  color: #eee;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+footer a {
+  margin: 0 10px;
+  color: #eee;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #00bcd4;
+}
+
+footer p {
+  margin: 5px;
+}
+
+footer .creditos {
+  margin-bottom: 10px;
+}
+
+footer .horizonte {
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .destinos-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .destino-card {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  footer {
+    padding: 30px 10px;
+  }
+
+  footer a {
+    display: block;
+    margin: 8px 0;
+  }
+}
+
+.allende-header {
+  background-color: #1c1c1c;
+  color: #eee;
+  text-align: center;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.titulo-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.titulo-logo h1 {
+  font-size: 3rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: #eee;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+}
+
+.icono-avion {
+  width: 60px;
+  height: auto;
+  transform: rotate(-20deg);
+}
+
+.linea-logo {
+  width: 60px;
+  height: 2px;
+  background-color: #eee;
+  margin-top: 10px;
+  animation: dibujarLinea 1.2s ease-out forwards;
+  transform: scaleX(0);
+  transform-origin: center;
+}
+
+@keyframes dibujarLinea {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.allende-header p {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #ccc;
+  margin-top: 10px;
+}
+
+.allende-contenido {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 40px 20px;
+  background-color: #f5f5f5;
+}
+
+.allende-img {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.allende-texto {
+  max-width: 600px;
+  margin: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+.allende-texto h2 {
+  margin-top: 30px;
+  font-size: 1.5rem;
+  color: #1c1c1c;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 5px;
+}
+
+.allende-texto li {
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.allende-texto li:hover {
+  background-color: #e0e0e0;
+  color: #1c1c1c;
+  cursor: pointer;
+}
+
+.map-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #1c1c1c;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.map-btn:hover {
+  background-color: #333;
+}
+
+.allende-footer {
+  background-color: #1c1c1c;
+  color: #eee;
+  text-align: center;
+  padding: 30px 20px;
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .titulo-logo h1 {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .icono-avion {
+    transform: rotate(-20deg);
+    margin-bottom: 10px;
+  }
+
+  .allende-contenido {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.cancun-header {
+  background-color: #00bcd4;
+  text-align: center;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.cancun-header .titulo-logo h1 {
+  font-size: 3rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+}
+
+.cancun-header .linea-logo {
+  background-color: #fff;
+}
+
+.cancun-header p {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #e0f7fa;
+  margin-top: 10px;
+}
+
+.cancun-contenido {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 40px 20px;
+  background-color: #e0f7fa; 
+}
+
+.cancun-img {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 188, 212, 0.3); 
+  order: 2; 
+}
+
+.cancun-texto {
+  max-width: 600px;
+  margin: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #004d40; 
+  order: 1;
+}
+
+.cancun-texto h2 {
+  margin-top: 30px;
+  font-size: 1.5rem;
+  color: #00796b;
+  border-bottom: 2px solid #4dd0e1;
+  padding-bottom: 5px;
+}
+
+.cancun-texto li {
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cancun-texto li:hover {
+  background-color: #b2ebf2;
+  color: #006064;
+  cursor: pointer;
+}
+
+.map-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #00796b;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.map-btn:hover {
+  background-color: #004d40;
+}
+
+.cancun-footer {
+  background-color: #00bcd4;
+  color: #fff;
+  text-align: center;
+  padding: 30px 20px;
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .titulo-logo h1 {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .icono-avion {
+    transform: rotate(-20deg);
+    margin-bottom: 10px;
+  }
+
+  .cancun-contenido {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cancun-img, .cancun-texto {
+    order: unset;
+  }
+}
+
+.cdmx-header {
+  background-color: #2c2c2c; 
+  color: #f5f5f5;
+  text-align: center;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.cdmx-header .titulo-logo h1 {
+  font-size: 3rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+}
+
+.cdmx-header .linea-logo {
+  background-color: #f5f5f5;
+}
+
+.cdmx-header p {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #ccc;
+  margin-top: 10px;
+}
+
+.cdmx-contenido {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 40px 20px;
+  background-color: #f0f0f0;
+}
+
+.cdmx-img {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(44, 44, 44, 0.3);
+  order: 1; 
+}
+
+.cdmx-texto {
+  max-width: 600px;
+  margin: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  order: 2;
+}
+
+.cdmx-texto h2 {
+  margin-top: 30px;
+  font-size: 1.5rem;
+  color: #8e0000; 
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 5px;
+}
+
+.cdmx-texto li {
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cdmx-texto li:hover {
+  background-color: #e0e0e0;
+  color: #8e0000;
+  cursor: pointer;
+}
+
+.map-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #8e0000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.map-btn:hover {
+  background-color: #5c0000;
+}
+
+.cdmx-footer {
+  background-color: #2c2c2c;
+  color: #f5f5f5;
+  text-align: center;
+  padding: 30px 20px;
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .titulo-logo h1 {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .icono-avion {
+    transform: rotate(-20deg);
+    margin-bottom: 10px;
+  }
+
+  .cdmx-contenido {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cdmx-img, .cdmx-texto {
+    order: unset;
+  }
+}
+
+.chichen-header {
+  background-color: #3e4e3e; 
+  color: #f0f0e0;
+  text-align: center;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.chichen-header .titulo-logo h1 {
+  font-size: 3rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: #f0f0e0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+}
+
+.chichen-header .linea-logo {
+  background-color: #f0f0e0;
+}
+
+.chichen-header p {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #d0d0c0;
+  margin-top: 10px;
+}
+
+.chichen-contenido {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 40px 20px;
+  background-color: #f5f5f0;
+}
+
+.chichen-img {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(62, 78, 62, 0.3);
+  order: 2; 
+}
+
+.chichen-texto {
+  max-width: 600px;
+  margin: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #2e3b2e;
+  order: 1;
+}
+
+.chichen-texto h2 {
+  margin-top: 30px;
+  font-size: 1.5rem;
+  color: #6b8e23; /* Verde oliva */
+  border-bottom: 2px solid #cddc39;
+  padding-bottom: 5px;
+}
+
+.chichen-texto li {
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.chichen-texto li:hover {
+  background-color: #e6eed6;
+  color: #2e3b2e;
+  cursor: pointer;
+}
+
+.map-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #6b8e23;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.map-btn:hover {
+  background-color: #4e6e1f;
+}
+
+.chichen-footer {
+  background-color: #3e4e3e;
+  color: #f0f0e0;
+  text-align: center;
+  padding: 30px 20px;
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .titulo-logo h1 {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .icono-avion {
+    transform: rotate(-20deg);
+    margin-bottom: 10px;
+  }
+
+  .chichen-contenido {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .chichen-img, .chichen-texto {
+    order: unset;
+  }
+}
+
+.guadalajara-header {
+  background-color: #8b0000;
+  color: #fff8f0;
+  text-align: center;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.guadalajara-header .titulo-logo h1 {
+  font-size: 3rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff8f0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+}
+
+.guadalajara-header .linea-logo {
+  background-color: #fff8f0;
+}
+
+.guadalajara-header p {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #ffe4e1;
+  margin-top: 10px;
+}
+
+.guadalajara-contenido {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 40px 20px;
+  background-color: #fff8f0;
+}
+
+.guadalajara-img {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(139, 0, 0, 0.3);
+  order: 1; 
+}
+
+.guadalajara-texto {
+  max-width: 600px;
+  margin: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #4b1c1c;
+  order: 2;
+}
+
+.guadalajara-texto h2 {
+  margin-top: 30px;
+  font-size: 1.5rem;
+  color: #b22222;
+  border-bottom: 2px solid #cd5c5c;
+  padding-bottom: 5px;
+}
+
+.guadalajara-texto li {
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.guadalajara-texto li:hover {
+  background-color: #ffe4e1;
+  color: #8b0000;
+  cursor: pointer;
+}
+
+.map-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #b22222;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.map-btn:hover {
+  background-color: #8b0000;
+}
+
+.guadalajara-footer {
+  background-color: #8b0000;
+  color: #fff8f0;
+  text-align: center;
+  padding: 30px 20px;
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .titulo-logo h1 {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .icono-avion {
+    transform: rotate(-20deg);
+    margin-bottom: 10px;
+  }
+
+  .guadalajara-contenido {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .guadalajara-img, .guadalajara-texto {
+    order: unset;
+  }
+}
+
+.cabos-header {
+  background-color: #f4a460; 
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.cabos-header .titulo-logo h1 {
+  font-size: 3rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+}
+
+.cabos-header .linea-logo {
+  background-color: #fff;
+}
+
+.cabos-header p {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #ffe;
+  margin-top: 10px;
+}
+
+.cabos-contenido {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 40px 20px;
+  background-color: #fffaf0;
+}
+
+.cabos-img {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(244, 164, 96, 0.3);
+  order: 2; 
+}
+
+.cabos-texto {
+  max-width: 600px;
+  margin: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #5c3d2e;
+  order: 1;
+}
+
+.cabos-texto h2 {
+  margin-top: 30px;
+  font-size: 1.5rem;
+  color: #d2691e; 
+  border-bottom: 2px solid #f4a460;
+  padding-bottom: 5px;
+}
+
+.cabos-texto li {
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cabos-texto li:hover {
+  background-color: #ffe4c4;
+  color: #8b4513;
+  cursor: pointer;
+}
+
+.map-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #d2691e;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.map-btn:hover {
+  background-color: #8b4513;
+}
+
+.cabos-footer {
+  background-color: #f4a460;
+  color: #fff;
+  text-align: center;
+  padding: 30px 20px;
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .titulo-logo h1 {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .icono-avion {
+    transform: rotate(-20deg);
+    margin-bottom: 10px;
+  }
+
+  .cabos-contenido {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cabos-img, .cabos-texto {
+    order: unset;
+  }
+}
+
+.oaxaca-header {
+  background-color: #8b0000; 
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.oaxaca-header .titulo-logo h1 {
+  font-size: 3rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+}
+
+.oaxaca-header .linea-logo {
+  background-color: #fff;
+}
+
+.oaxaca-header p {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #ffe;
+  margin-top: 10px;
+}
+
+.oaxaca-contenido {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #fff8f0;
+}
+
+.oaxaca-img {
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover; 
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(139, 0, 0, 0.3);
+  order: 1;
+}
+
+.oaxaca-texto {
+  max-width: 600px;
+  margin: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #4b2e2e;
+  order: 2;
+}
+
+.oaxaca-texto h2 {
+  margin-top: 30px;
+  font-size: 1.5rem;
+  color: #a0522d;
+  border-bottom: 2px solid #8b0000;
+  padding-bottom: 5px;
+}
+
+.oaxaca-texto li {
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.oaxaca-texto li:hover {
+  background-color: #ffe4e1;
+  color: #8b0000;
+  cursor: pointer;
+}
+
+.map-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #a0522d;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.map-btn:hover {
+  background-color: #8b0000;
+}
+
+.oaxaca-footer {
+  background-color: #8b0000;
+  color: #fff;
+  text-align: center;
+  padding: 30px 20px;
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .titulo-logo h1 {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .icono-avion {
+    transform: rotate(-20deg);
+    margin-bottom: 10px;
+  }
+
+  .oaxaca-contenido {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .oaxaca-img, .oaxaca-texto {
+    order: unset;
+  }
+}
+
+.puebla-header {
+  background-color: #5a3f2a;
+  color: #eee;
+  text-align: center;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.titulo-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.titulo-logo h1 {
+  font-size: 3rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: #eee;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+}
+
+.icono-avion {
+  width: 60px;
+  height: auto;
+  transform: rotate(-20deg);
+}
+
+.linea-logo {
+  width: 60px;
+  height: 2px;
+  background-color: #eee;
+  margin-top: 10px;
+  animation: dibujarLinea 1.2s ease-out forwards;
+  transform: scaleX(0);
+  transform-origin: center;
+}
+
+@keyframes dibujarLinea {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.puebla-header p {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #ccc;
+  margin-top: 10px;
+}
+
+.puebla-contenido {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 40px 20px;
+  background-color: #fdfaf6;
+}
+
+.puebla-img {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(90, 63, 42, 0.3);
+}
+
+.puebla-texto {
+  max-width: 600px;
+  margin: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #3e2c1c;
+}
+
+.puebla-texto h2 {
+  margin-top: 30px;
+  font-size: 1.5rem;
+  color: #5a3f2a;
+  border-bottom: 2px solid #d8cfc7;
+  padding-bottom: 5px;
+}
+
+.puebla-texto li {
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.puebla-texto li:hover {
+  background-color: #eae4dc;
+  color: #5a3f2a;
+  cursor: pointer;
+}
+
+.map-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #5a3f2a;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.map-btn:hover {
+  background-color: #3e2c1c;
+}
+
+.puebla-footer {
+  background-color: #5a3f2a;
+  color: #eee;
+  text-align: center;
+  padding: 30px 20px;
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .titulo-logo h1 {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .icono-avion {
+    transform: rotate(-20deg);
+    margin-bottom: 10px;
+  }
+
+  .puebla-contenido {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.riviera-header {
+  background-color: #00796b; 
+  color: #eee;
+  text-align: center;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.titulo-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.titulo-logo h1 {
+  font-size: 3rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: #eee;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+}
+
+.icono-avion {
+  width: 60px;
+  height: auto;
+  transform: rotate(-20deg);
+}
+
+.linea-logo {
+  width: 60px;
+  height: 2px;
+  background-color: #eee;
+  margin-top: 10px;
+  animation: dibujarLinea 1.2s ease-out forwards;
+  transform: scaleX(0);
+  transform-origin: center;
+}
+
+@keyframes dibujarLinea {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.riviera-header p {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #cceee8;
+  margin-top: 10px;
+}
+
+.riviera-contenido {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 40px 20px;
+  background-color: #f5fff9;
+}
+
+.riviera-img {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  order: 2; 
+}
+
+.riviera-texto {
+  max-width: 600px;
+  margin: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  order: 1;
+}
+
+.riviera-texto h2 {
+  margin-top: 30px;
+  font-size: 1.5rem;
+  color: #00796b;
+  border-bottom: 2px solid #b2dfdb;
+  padding-bottom: 5px;
+}
+
+.riviera-texto li {
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.riviera-texto li:hover {
+  background-color: #d0f0e8;
+  color: #004d40;
+  cursor: pointer;
+}
+
+.map-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #00796b;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.map-btn:hover {
+  background-color: #004d40;
+}
+
+.riviera-footer {
+  background-color: #00796b;
+  color: #eee;
+  text-align: center;
+  padding: 30px 20px;
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .titulo-logo h1 {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .icono-avion {
+    transform: rotate(-20deg);
+    margin-bottom: 10px;
+  }
+
+  .riviera-contenido {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .riviera-img, .riviera-texto {
+    order: unset;
+  }
+}
+
+.vallarta-header {
+  background-color: #d2691e; 
+  color: #eee;
+  text-align: center;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.titulo-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.titulo-logo h1 {
+  font-size: 3rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: #eee;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+}
+
+.icono-avion {
+  width: 60px;
+  height: auto;
+  transform: rotate(-20deg);
+}
+
+.linea-logo {
+  width: 60px;
+  height: 2px;
+  background-color: #eee;
+  margin-top: 10px;
+  animation: dibujarLinea 1.2s ease-out forwards;
+  transform: scaleX(0);
+  transform-origin: center;
+}
+
+@keyframes dibujarLinea {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.vallarta-header p {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #f5e0d0;
+  margin-top: 10px;
+}
+
+.vallarta-contenido {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 40px 20px;
+  background-color: #fffaf3;
+}
+
+.vallarta-img {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  order: 1; /* Imagen a la izquierda */
+}
+
+.vallarta-texto {
+  max-width: 600px;
+  margin: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  order: 2;
+}
+
+.vallarta-texto h2 {
+  margin-top: 30px;
+  font-size: 1.5rem;
+  color: #d2691e;
+  border-bottom: 2px solid #f4c29c;
+  padding-bottom: 5px;
+}
+
+.vallarta-texto li {
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.vallarta-texto li:hover {
+  background-color: #fce5d4;
+  color: #a0522d;
+  cursor: pointer;
+}
+
+.map-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #d2691e;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.map-btn:hover {
+  background-color: #a0522d;
+}
+
+.vallarta-footer {
+  background-color: #d2691e;
+  color: #eee;
+  text-align: center;
+  padding: 30px 20px;
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .titulo-logo h1 {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .icono-avion {
+    transform: rotate(-20deg);
+    margin-bottom: 10px;
+  }
+
+  .vallarta-contenido {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .vallarta-img, .vallarta-texto {
+    order: unset;
+  }
+}
+
+.gastronomia-section {
+  padding: 80px 30px;
+  text-align: center;
+  background: linear-gradient(to bottom, #fff8f0, #fbe2c2);
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+}
+
+.gastronomia-section h2 {
+  font-size: 2.8rem;
+  color: #a0522d;
+  margin-bottom: 10px;
+  font-family: 'Cinzel', serif;
+  animation: fadeInDown 1s ease-out;
+}
+
+.gastronomia-section p {
+  font-size: 1.2rem;
+  color: #555;
+  font-style: italic;
+  margin-bottom: 50px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.gastronomia-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  justify-items: center;
+  animation: fadeIn 1.5s ease-out;
+}
+
+.gastronomia-platillo {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  padding: 25px;
+  max-width: 320px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.gastronomia-platillo:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.25);
+}
+
+.gastronomia-platillo img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.gastronomia-platillo:hover img {
+  transform: scale(1.05);
+}
+
+.gastronomia-platillo h3 {
+  color: #d2691e;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.gastronomia-platillo p {
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.gastronomia-origen {
+  display: block;
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: #888;
+  font-style: italic;
+}
+
+/* Animaciones */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gastronomia-section h2 {
+    font-size: 2rem;
+  }
+
+  .gastronomia-platillo {
+    max-width: 90%;
+  }
+}
